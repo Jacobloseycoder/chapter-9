@@ -7,7 +7,12 @@ lets the user shift the alphabet however mush they want
 ###  Flowchart
 ```mermaid
 graph TD;
-  main
+  main --> get_shift
+  main --> choose_option
+  main --> get_message
+  main --> create_key
+  main --> encode
+  main --> decode
 ```
 
 #### Function Diagrams
