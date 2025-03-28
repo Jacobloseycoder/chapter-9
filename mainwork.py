@@ -9,7 +9,14 @@ def choose_option():
     #choose_option should prompt the user to choose to encode or decode. 
     #It should return True if the user chooses encode and False if the user chooses decode.
     #Validate to only accept the appropriate prompts for encode and decode.
-    pass
+    chooce = input('do you want to encode or decode')
+    if chooce == 'encode':
+        print('balls')
+        #return True
+    elif chooce == 'decode':
+        print('ballsss')
+        #return False
+    else:
 def get_message():
     #get_message should prompt the user to enter a message to encode or decode.  It should return that message
     pass
