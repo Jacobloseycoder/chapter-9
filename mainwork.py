@@ -16,7 +16,29 @@ def get_message():
 def create_key(shift):
     #create_key should accept the shift value from get_shift.
     #It should create the caesar cipher according to the shift value and store the key in a dictionary and return the dictionary as the key
-    pass
+    
+    # import string
+    import string
+    
+    ALPHABET = string.ascii_lowercase
+    alpha_to_letter = dict()
+    letter_to_alpha = dict()
+    key = dict()
+    count = 0
+    
+    for letter in ALPHABET:
+        count += 1
+        letter_to_alpha[count] = letter
+        alpha_to_letter[letter] = count
+    
+    for letter in ALPHABET:
+        new_letter = alpha_to_letter[letter]
+        new_letter += shift
+        new_letter = letter_to_alpha[new_letter]
+        
+        key[new_letter] = letter
+    print(key)
+    
 def encode(message, key):
     #encode should accept message as a string and key as a dictionary.
     #It should encode the message using the key and return the encoded message as a string
@@ -25,3 +47,4 @@ def decode(message, key):
     #decode should accept message as a string and key as a dictionary.
     #It should decode the message using the key and return the decoded message as a string
     pass
+create_key(1)
