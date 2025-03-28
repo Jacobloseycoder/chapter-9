@@ -1,5 +1,5 @@
 # chapter-9
-jacob
+jacob, gage
 
 ##  Description
 lets the user shift the alphabet however mush they want
