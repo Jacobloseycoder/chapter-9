@@ -29,16 +29,18 @@ def choose_option():
         return False
 def get_message():
     #get_message should prompt the user to enter a message to encode or decode.  It should return that message
-    bad = True
     
-    while bad == True:
+    # initialize variable
+    bad = 2
+    
+    # loop until the message is good
+    while bad > 0:
         message = input("Enter a message to encode/decode: ")
-        bad = False
+        bad = 0
         for letter in message:
-            if message.isalpha() or message.isspace():
-                pass
-            else:
-                bad = True
+            # check the message is good
+            if letter.isalpha() == False and letter.isspace() == False:
+                bad += 1
     
     return message
 
