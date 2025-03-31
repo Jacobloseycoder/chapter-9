@@ -5,10 +5,9 @@ def get_shift():
   #get_shift should prompt the user for the shift value and return the value as a string 
   #Validate for integers 1-25, inclusive
   shift = int(input('enter how many you want to shift'))
-  if shift > 0 and shift < 26:
+    while shift < 0 or shift > 26:
+        shift = int(input('enter how many you want to shift'))
     return shift
-  else:
-    print('too many or little shifts wanted')
 def choose_option():
   #choose_option should prompt the user to choose to encode or decode. 
   #It should return True if the user chooses encode and False if the user chooses decode.
