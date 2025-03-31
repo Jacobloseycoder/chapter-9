@@ -20,24 +20,36 @@ def create_key(shift):
     # import string
     import string
     
+    # initialize variables
     ALPHABET = string.ascii_lowercase
-    alpha_to_letter = dict()
-    letter_to_alpha = dict()
+    num_to_letter = dict()
+    letter_to_num = dict()
     key = dict()
-    count = 0
+    counter = 0
     
+    # create the translating dictionaries
     for letter in ALPHABET:
-        count += 1
-        letter_to_alpha[count] = letter
-        alpha_to_letter[letter] = count
+        letter_to_num[letter] = counter
+        num_to_letter[counter] = letter
+        counter += 1
     
+    # create the key with the old letters translated to new letters
     for letter in ALPHABET:
-        new_letter = alpha_to_letter[letter]
-        new_letter += shift
-        new_letter = letter_to_alpha[new_letter]
+        old_letter = letter_to_num[letter]
+        old_letter += shift
         
-        key[new_letter] = letter
-    print(key)
+        # translate if the old letter goes over z
+        while old_letter >= 26:
+            old_letter = old_letter - 26
+    
+        old_letter = num_to_letter[old_letter]
+        
+        # add to key
+        key[old_letter] = letter
+    
+    # return the key
+    return key
+    
     
 def encode(message, key):
     #encode should accept message as a string and key as a dictionary.
@@ -47,4 +59,4 @@ def decode(message, key):
     #decode should accept message as a string and key as a dictionary.
     #It should decode the message using the key and return the decoded message as a string
     pass
-create_key(1)
+create_key(56)
