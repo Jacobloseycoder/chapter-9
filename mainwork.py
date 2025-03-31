@@ -10,9 +10,9 @@ def main():
   else:
       decode(message, key)
 def get_shift():
-  #get_shift should prompt the user for the shift value and return the value as a string 
-  #Validate for integers 1-25, inclusive
-  shift = int(input('enter how many you want to shift'))
+    #get_shift should prompt the user for the shift value and return the value as a string 
+    #Validate for integers 1-25, inclusive
+    shift = int(input('enter how many you want to shift'))
     while shift < 0 or shift > 26:
         shift = int(input('enter how many you want to shift'))
     return shift
