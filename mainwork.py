@@ -12,7 +12,19 @@ def choose_option():
     pass
 def get_message():
     #get_message should prompt the user to enter a message to encode or decode.  It should return that message
-    pass
+    bad = True
+    
+    while bad == True:
+        message = input("Enter a message to encode/decode: ")
+        bad = False
+        for letter in message:
+            if message.isalpha() or message.isspace():
+                pass
+            else:
+                bad = True
+    
+    return message
+
 def create_key(shift):
     #create_key should accept the shift value from get_shift.
     #It should create the caesar cipher according to the shift value and store the key in a dictionary and return the dictionary as the key
@@ -47,4 +59,4 @@ def decode(message, key):
     #decode should accept message as a string and key as a dictionary.
     #It should decode the message using the key and return the decoded message as a string
     pass
-create_key(1)
+get_message()
