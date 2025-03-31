@@ -1,14 +1,14 @@
 def main():
-  #main should call all other functions to build the entire program
-  #main should call all other functions to build the entire program
-  shift = get_shift()
-  message = get_message()
-  chooce = choose_option()
-  key = create_key(shift)
-  if chooce == True:
-      encode(message, key)
-  else:
-      decode(message, key)
+    #main should call all other functions to build the entire program
+    #main should call all other functions to build the entire program
+    shift = get_shift()
+    message = get_message()
+    chooce = choose_option()
+    key = create_key(shift)
+    if chooce == True:
+        encode(message, key)
+    else:
+        decode(message, key)
 def get_shift():
     #get_shift should prompt the user for the shift value and return the value as a string 
     #Validate for integers 1-25, inclusive
