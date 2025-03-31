@@ -6,9 +6,13 @@ def main():
     chooce = choose_option()
     key = create_key(shift)
     if chooce == True:
-        encode(message, key)
+        print("Here is your encoded message: ")
+        message = encode(message, key)
+        print(message)
     else:
-        decode(message, key)
+        print("Here is your decoded message: ")
+        message = decode(message, key)
+        print(message)
 def get_shift():
     #get_shift should prompt the user for the shift value and return the value as a string 
     #Validate for integers 1-25, inclusive
