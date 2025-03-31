@@ -23,7 +23,6 @@ def choose_option():
         return True
     else:
         return False
-    else:
 def get_message():
     #get_message should prompt the user to enter a message to encode or decode.  It should return that message
     bad = True
