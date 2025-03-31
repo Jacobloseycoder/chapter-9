@@ -69,4 +69,32 @@ def encode(message, key):
 def decode(message, key):
     #decode should accept message as a string and key as a dictionary.
     #It should decode the message using the key and return the decoded message as a string
-    pass
+    
+    # initialize variables
+    new_message = ""
+    
+    # read each letter and convert it
+    for letter in message:
+        # go if it isnt a space, if it is add a space.
+        if letter != " ":
+            # check if its uppercase
+            if letter.isupper() == True:
+                capital = True
+                # set it to lower to translate
+                letter = letter.lower()
+                
+            # set the new letter
+            new_letter = key[letter]
+            
+            # if it was uppercase, change it to uppercase and reset capital variable
+            if capital == True:
+                new_letter = new_letter.upper()
+                capital = False
+            # add the new letter to the new message
+            new_message += new_letter
+        else:
+            # add the new message with a space
+            new_message += " "
+    
+    # return the new message
+    return new_message
